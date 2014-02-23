@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-# TODO: Implement the weather update.
-# TODO: Implement the stock+exchange update.
 # TODO: Implement the RSS thing.
 
 import json
@@ -9,13 +7,25 @@ import json
 from stocks import *
 from weather import *
 
-final_hash = { "stocks": None,
-               "weather": None }
+class API:
+    def __init__(self):
+        return
 
-stocks = Stocks()
-final_hash["stocks"] = stocks.get("GOOG")
+    def get_stock(self, ticker):
+        stocks = Stocks()
+        return stocks.get(ticker)
 
-weather = Weather()
-final_hash["weather"] = weather.get("Vitoria, Espirito Santo")
+    def get_weather(self, location, metric = True):
+        weather = Weather()
+        return weather.get(location, metric)
 
-print json.dumps(final_hash, indent = 4)
+# Testing standalone.
+if __name__ == "__main__":
+    api = API()
+    final_hash = { "stocks": None,
+                   "weather": None }
+
+    final_hash["stocks"] = api.get_stock("GOOG")
+    final_hash["weather"] = api.get_weather("Vitoria, Espirito Santo")
+
+    print json.dumps(final_hash, indent = 4)
