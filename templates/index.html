@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Apple -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+		<!-- Microsoft -->
+		<meta name="application-name" content="Morning Briefing"> 
+		<meta name="msapplication-TileImage" content="icon/ffos-icon-256.png">
+		<meta name="msapplication-TileColor" content="#E7E7E7">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+		<title>Morning Briefing</title>
+
+		<!-- Libraries -->
+		<link href="lib/normalize/normalize.css" rel="stylesheet">
+		<script src="lib/jquery-2.0.3.js" type="text/javascript"></script>
+
+		<!-- Bootstrap -->
+		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<!--<link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">-->
+		<script src="lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+		<!-- Style -->
+		<link href="css/main.css" rel="stylesheet">
+
+		<!-- Javascript -->
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="container screen" id="Home">
+			<!-- Navbar -->
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container">
+					<!-- Brand -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/">Morning Briefing</a>
+					</div>
+
+					<!-- The rest -->
+					<div class="collapse navbar-collapse" id="navbar-collapse">
+						<!-- Control -->
+						<div class="btn-group">
+							<button type="button"
+									class="btn btn-default navbar-btn"
+									onclick="refresh();">
+								<span class="glyphicon glyphicon-refresh"></span>
+							</button>
+						</div>
+
+						<!-- Right -->
+						<ul class="nav navbar-nav navbar-right">
+							<!-- Root selection -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Roots <b class="caret"></b></a>
+								<ul id="root-menu" class="dropdown-menu">
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+			<!-- Location label -->
+			<ol class="breadcrumb" id="path">
+			</ol>
+
+			<!-- File browser grid -->
+			<div id="grid" class="grid hidden-xs">
+			</div>
+
+			<ul id="list" class="visible-xs">
+			</ul>
+		</div>
+	</body>
+</html>

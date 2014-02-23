@@ -5,7 +5,7 @@ import flask
 
 import api.api as API
 
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, static_url_path = "")
 
 @app.route("/api")
 def api_request():
@@ -18,6 +18,10 @@ def api_request():
 
     return flask.Response(json.dumps(final_hash),
                           content_type = "application/json; charset=utf-8")
+
+@app.route("/")
+def index():
+    return flask.render_template("index.html")
 
 if __name__ == "__main__":
     app.debug = True

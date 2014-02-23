@@ -1,0 +1,48 @@
+body {
+	background: whitesmoke;
+}
+
+.screen {
+	padding-top: 70px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+
+/* Navbar buttons */
+
+.collapse.navbar-collapse > .btn-group:first-of-type {
+	margin-left: 0;
+}
+
+.collapse.navbar-collapse > .btn-group {
+	margin-left: 10px;
+}
+
+#list {
+	list-style: none;
+	padding: 0;
+}
+
+#list > li {
+	-webkit-box-orient: vertical;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	height: 50px;
+}
+
+#list > li > img {
+	float: left;
+
+	margin-right: 5px;
+	max-width: 50px !important;
+}
+
+#list > li > .name {
+	width: auto !important;
+	padding-top: 7px;
+}
