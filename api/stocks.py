@@ -15,12 +15,12 @@ class Stocks:
         stock = { "name":   csv[0],
                   "ticker": csv[1],
                   "value":  csv[2],
-                  "change_value": csv[3],
-                  "change_perc": csv[4] }
+                  "change": { "value": csv[3],
+                              "percentage": csv[4] } }
 
         stock["value"] = float(stock["value"])
-        stock["change_value"] = float(stock["change_value"])
-        stock["change_perc"] = float(stock["change_perc"].replace("%", ""))
+        stock["change"]["value"] = float(stock["change"]["value"])
+        stock["change"]["percentage"] = float(stock["change"]["percentage"].replace("%", ""))
 
         return stock
 

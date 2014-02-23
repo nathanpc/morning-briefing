@@ -4,7 +4,18 @@
 # TODO: Implement the stock+exchange update.
 # TODO: Implement the RSS thing.
 
-import * from stocks
+import json
+
+from stocks import *
+from weather import *
+
+final_hash = { "stocks": None,
+               "weather": None }
 
 stocks = Stocks()
-print stocks.get("GOOG")
+final_hash["stocks"] = stocks.get("GOOG")
+
+weather = Weather()
+final_hash["weather"] = weather.get("Vitoria, Espirito Santo")
+
+print json.dumps(final_hash, indent = 4)
